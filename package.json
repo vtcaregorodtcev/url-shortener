@@ -1,0 +1,56 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "webpack --config ./webpack.config.js --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Werawoolf",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "angular": "1.6.1",
+    "angular-ui-router": "0.3.2",
+    "autoprefixer": "^6.1.0",
+    "autoprefixer-core": "^6.0.1",
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "body-parser": "^1.14.1",
+    "crypto": "0.0.3",
+    "css-loader": "^0.23.0",
+    "express": "^4.13.3",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
+    "lodash": "^3.10.1",
+    "moment": "^2.11.1",
+    "mongoose": "^4.3.2",
+    "morgan": "^1.6.1",
+    "postcss-import": "^7.1.3",
+    "postcss-loader": "^0.8.0",
+    "postcss-mixins": "^2.1.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.1.0",
+    "precss": "^1.3.0",
+    "q": "^1.4.1",
+    "request": "^2.79.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  }
+}

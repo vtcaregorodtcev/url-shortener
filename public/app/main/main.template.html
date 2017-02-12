@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="caption">Url Shortener</div>
+    <div class="content">
+        <div class="input-wr content__item">
+            <div class="input-container">
+                <input ng-model="mc.longUrl" class="input" type="text" placeholder="Enter your ugly long url">
+                <span class="under-msg error" ng-bind="mc.errMsg"></span>
+                <span class="under-msg" ng-bind="mc.msg"></span>
+            </div>
+            <button ng-click="mc.process()">Process</button>
+        </div>
+        <div class="options content__item">
+            <input type="checkbox"> I want to select short url myself
+        </div>
+        <div class="output content__item">
+            <input ng-model="mc.shortUrl" class="input" type="text">
+        </div>
+    </div>
+</div>
