@@ -48,6 +48,8 @@ module.exports = (app) => {
 
                         res.status(200).send(record.long_url);
                     };
+
+                    res.status(200).send(null);
                 });
         });
 

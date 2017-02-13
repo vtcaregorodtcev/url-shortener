@@ -25,7 +25,7 @@
         function resolveLongUrl(hash) {
             return $http.post(api + "/resolve", { hash: hash })
                 .then(function(res) {
-                    location.href = res.data;
+                    location.href = res.data || "http://proteys.info/404/";
                 });
         }
     }
