@@ -7,6 +7,7 @@
         $stateProvider
             .state('redirect', {
                 url: '/:hash',
+                template: "Loading...",
                 resolve: {
                     longUrl: resolveLongUrl
                 }

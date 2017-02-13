@@ -10,10 +10,12 @@
             <button ng-click="mc.process()">Process</button>
         </div>
         <div class="options content__item">
-            <input type="checkbox"> I want to select short url myself
+            <input ng-model="mc.shortFirst" type="checkbox"> I want to select short url myself
         </div>
         <div class="output content__item">
-            <input ng-model="mc.shortUrl" class="input" type="text">
+            <span ng-bind="mc.host"></span>
+            <input alpha-numeric ng-disabled="!mc.shortFirst" ng-model="mc.hash" class="input" type="text">
+            <span title="copy" copy-clipboard text="mc.shortUrl"></span>
         </div>
     </div>
 </div>

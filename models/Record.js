@@ -10,6 +10,16 @@ let schema = new mongoose.Schema({
     amount_usage: { type: Number, default: 0 }
 });
 
+schema.methods.safeModel = safeModel;
+
 let Record = mongoose.model('Record', schema);
+
+function safeModel() {
+    return {
+        short_url: this.short_url,
+        long_url: this.long_url,
+        hash: this.hash
+    };
+}
 
 module.exports = Record;

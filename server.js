@@ -7,11 +7,28 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const Agenda = require('agenda');
+const Record = require('./models/Record');
+
 const conf = require('./app.config');
 
 /* ----- connections -------- */
 
 mongoose.connect(conf.mongo_connection, (err) => { if (err) console.log(err); });
+
+var agenda = new Agenda({ db: { address: conf.mongo_connection, collection: 'jobs' } });
+
+var now = new Date();
+var _15DaysAgo = now.setDate(now.getDate() - 15);
+
+agenda.define('delete old records', (job, done) => {
+    Record.remove({ updated_at: { $lt: _15DaysAgo } }, done);
+});
+
+agenda.on('ready', () => {
+    agenda.every('15 days', 'delete old records');
+    agenda.start();
+});
 
 /* ----- connections -------- */
 

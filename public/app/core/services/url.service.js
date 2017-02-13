@@ -7,23 +7,19 @@
         var api = process.env.BASE_API;
 
         return {
-            urlIsFree: urlIsFree,
             generateShortUrl: generateShortUrl,
             resolveLongUrl: resolveLongUrl
         };
 
-        function urlIsFree(shortUrl) {
-            return $http.post(api + "/isurlfree", { shortUrl: shortUrl })
+        function generateShortUrl(longUrl, hash, host) {
+            return $http.post(api + "/shorturl", {
+                    longUrl: longUrl,
+                    hash: hash,
+                    host: host
+                })
                 .then(function(res) {
                     return res.data;
-                })
-        }
-
-        function generateShortUrl(longUrl) {
-            return $http.post(api + "/shorturl", { longUrl: longUrl })
-                .then(function(res) {
-                    return res.data;
-                })
+                });
         }
 
         function resolveLongUrl(hash) {
