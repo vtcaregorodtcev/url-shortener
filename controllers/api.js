@@ -19,7 +19,7 @@ module.exports = (app) => {
                 res.status(202).send({ errMsg: "Long url is not valid" });
 
             request(longUrl, (err, response) => {
-                if (response.statusCode >= 200 && response.statusCode < 300) {
+                if (!err && response && response.statusCode >= 200 && response.statusCode < 300) {
                     if (hash && !helper.alphaNumeric.test(hash))
                         res.status(202).send({ errMsg: "Hash for short url is not alphanumeric" });
 
